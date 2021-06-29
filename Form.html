@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <h2>Register Here</h2>
+            <form action="" id="register" method="POST" onsubmit="return Validate()" name="form">
+                <label for="">First Name</label><br>
+                <input type="text" name="fname" id="name" placeholder="Enter first name"><br><br>
+                <label for="">Last Name</label><br>
+                <input type="text" name="lname" id="name" placeholder="Enter last name"><br><br>
+                <label for="">Your age</label><br>
+                <input type="number" name="age" id="name" placeholder="How old are you"><br><br>
+                <label for="">Email</label><br>
+                <input type="email" name="email" id="name", placeholder="Enter your valid emial"><br><br>
+                <label for="">Gender</label><br>
+                &nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" id="male">
+                &nbsp;
+                <span id="male">Male</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" id="female">
+                &nbsp;
+                <span id="female">Female</span><br><br>
+                <label for="">Know Language</label><br>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="lang" id="urdu">
+                &nbsp;
+                <span id="urdu">Urdu</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="lang" id="eng">
+                &nbsp;
+                <span id="eng">Eng</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="lang" id="hindko">
+                &nbsp;
+                <span id="hindko">Hindko</span><br><br>
+                <input type="submit" name="submit" value="submit" id="submit">
+            </form>
+        </div>
+    </div>
+    <script>
+        function Validate(){
+         var fname = document.form.fname;
+         var sname= document.form.lname
+         var age = document.form.age;
+         var email = document.form.email;
+         var gender = document.form.gender;
+         var Language = document.form.lang;
+         if(fname.value.length <= 0){
+           alert("First name is required");
+           fname.focus();
+           return false;
+         }
+         if(sname.value.length <= 0){
+           alert("Second name is required");
+           sname.focus();
+           return false;
+         }
+         if(email.value.length <= 0){
+           alert("Email is required");
+           email.focus();
+           return false;
+         }
+         if(age.value.length <= 0){
+           alert("Age is required");
+           age.focus();
+           return false;
+         }
+         if(gender.value.length <= 0){
+           alert("Gender is required");
+           gender.focus();
+           return false;
+         }
+         var check = false;
+         for(var i=Language.length-1;i>=0;i--){
+             if(Language[i].checked){
+                 check=true;
+             }
+         }
+         if(check == false){
+           alert("Language is required");
+           Language.focus();
+           return false;
+         }
+        }
+    </script>
+</body>
+</html>
